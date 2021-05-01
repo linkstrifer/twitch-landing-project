@@ -1,0 +1,121 @@
+.hero {
+  margin: calc(50px + var(--header-height)) 0 50px;
+  padding: 0 var(--wrapper-padding);
+  text-align: center;
+}
+
+.hero-heading {
+  font-size: 3.2em;
+  font-weight: 800;
+  margin: 0 0 15px;
+}
+
+.hero-heading-highlight {
+  background: var(--color-dodger-blue);
+  background-image: linear-gradient(
+    90deg,
+    var(--color-dodger-blue) 0%,
+    var(--color-viking) 100%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  display: block;
+}
+
+.hero-body-copy {
+  color: var(--color-dove-gray);
+  margin: 0 0 30px;
+  font-size: 1.3em;
+  line-height: 1.6;
+}
+
+.hero-ctas {
+  max-width: 340px;
+  margin: 0 auto 50px;
+}
+
+.hero-ctas .button {
+  padding: 15px 10px;
+  margin: 15px;
+}
+
+.hero-video {
+  aspect-ratio: 16/9;
+  border-radius: var(--radius);
+  background-color: #000;
+  box-shadow: var(--shadow);
+  margin: 0;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+
+.hero-video-container {
+  position: relative;
+}
+
+.hero-video img {
+  width: 100%;
+}
+
+.hero-video-logo {
+  --size: 90px;
+
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  height: var(--size);
+  width: var(--size);
+}
+
+.hero-video-logo .logo {
+  height: 100%;
+  width: 100%;
+}
+
+.hero-video-logo::before,
+.hero-video-logo::after {
+  border-radius: 50%;
+  content: "";
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+}
+
+.hero-video-logo::after {
+  background: rgba(255, 255, 255, 0.08);
+  background: radial-gradient(
+    circle at 50% 120%,
+    transparent 0%,
+    rgba(255, 255, 255, 0.0001) 20%,
+    rgba(255, 255, 255, 0.1) 50%,
+    rgba(255, 255, 255, 0.2) 100%
+  );
+  height: 150%;
+  width: 150%;
+}
+
+.hero-video-logo::before {
+  background: rgba(255, 255, 255, 0.04);
+  height: 200%;
+  width: 200%;
+}
+
+.hero-video-cta {
+  background-color: #fff;
+  border: 0;
+  border-radius: 50px;
+  font-size: 1em;
+  font-weight: 500;
+  box-shadow: var(--shadow);
+  letter-spacing: 1px;
+  bottom: 0;
+  left: 50%;
+  padding: 20px;
+  position: absolute;
+  transform: translate(-50%, 50%);
+}

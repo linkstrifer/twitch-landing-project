@@ -1,0 +1,27 @@
+.button {
+  color: inherit;
+  display: block;
+  font-weight: 500;
+  margin: 10px 0;
+  padding: 10px 20px;
+  text-decoration: none;
+}
+
+.button.is-primary {
+  background-color: var(--color-cod-gray);
+  border-radius: var(--radius);
+  color: #fff;
+  transition: background-color 150ms var(--cubic-bezier);
+}
+
+.button.is-highlight:hover {
+  background-color: var(--color-mine-shaft);
+}
+
+.button.is-blue {
+  background-color: var(--color-blue-ribbon);
+}
+
+.button.is-highlight:hover {
+  background-color: var(--color-science-blue);
+}

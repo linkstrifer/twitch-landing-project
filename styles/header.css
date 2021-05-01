@@ -1,0 +1,147 @@
+.header {
+  align-items: center;
+  backdrop-filter: blur(3px);
+  background-color: rgba(255, 255, 255, 0.9);
+  display: flex;
+  justify-content: space-between;
+  left: 0;
+  padding: var(--wrapper-padding);
+  position: fixed;
+  right: 0;
+  top: 0;
+  transition-duration: 150mx;
+  transition-property: box-shadow, background-color;
+  transition-timing-function: var(--cubic-bezier);
+  z-index: 1;
+}
+
+.header.is-sticky {
+  background-color: #fff;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+.header-logo {
+  margin: 0;
+}
+
+.nav {
+  background-color: #fff;
+  color: var(--color-dove-gray);
+  height: calc(100vh - var(--header-height));
+  left: 0;
+  opacity: 0;
+  overflow-y: scroll;
+  pointer-events: none;
+  position: absolute;
+  right: 0;
+  top: var(--header-height);
+  transform: translateY(-10px);
+  transition: opacity 150ms, transform 150ms;
+  transition-timing-function: var(--cubic-bezier);
+}
+
+.nav.is-visible {
+  opacity: 1;
+  pointer-events: all;
+  transform: translateY(0);
+}
+
+.nav-items {
+  padding: 0 var(--wrapper-padding);
+  margin: 0;
+}
+
+.nav-item {
+  display: flex;
+  flex-direction: column-reverse;
+  font-size: 16px;
+}
+
+.nav-item a {
+  color: inherit;
+  display: block;
+  padding: 10px 0;
+  text-decoration: none;
+}
+
+.nav-item .nav-items ~ a {
+  display: none;
+}
+
+.nav-item:hover {
+  color: #000;
+}
+
+.nav-items .nav-items {
+  border-bottom: 1px solid var(--color-gallery);
+  border-top: 1px solid var(--color-gallery);
+  margin: 10px 0 0;
+  padding: 10px 0;
+}
+
+.nav-items .nav-items::before {
+  content: attr(data-label);
+  color: var(--color-dove-gray);
+  display: block;
+  padding: 10px 0;
+}
+
+.nav-items .nav-items .nav-item a {
+  padding: 10px 20px;
+}
+
+.nav-ctas {
+  margin: 0;
+  padding: 0 var(--wrapper-padding) var(--wrapper-padding);
+}
+
+.nav-cta {
+  display: block;
+  text-align: center;
+}
+
+@media screen and (min-width: 768px) {
+  .header-logo {
+    margin-right: 20px;
+  }
+
+  .nav-hamburger {
+    display: none;
+  }
+
+  .nav {
+    align-items: center;
+    display: flex;
+    height: auto;
+    justify-content: space-between;
+    opacity: 1;
+    position: static;
+    transform: none;
+    width: 100%;
+  }
+
+  .nav-items,
+  .nav-ctas {
+    display: flex;
+  }
+
+  .nav-item {
+    margin: 0 15px;
+  }
+
+  .nav-item .nav-items ~ a {
+    display: block;
+  }
+
+  .nav-items .nav-items {
+    display: none;
+  }
+
+  .nav-ctas {
+    padding: 0;
+  }
+
+  .nav-cta .button {
+    margin: 0;
+  }
+}
